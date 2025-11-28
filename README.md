@@ -31,16 +31,16 @@ The check script is working already but not yet optimized to run as an Intune re
 
 ### OEM Vendor Support Statements (revisit them as they update their lists regularly):
 
-HP (Clients) https://support.hp.com/ie-en/document/ish_13070353-13070429-16
-HP Enterprise (Servers)  coming soon
-Dell (Clients) https://www.dell.com/support/kbdoc/en-us/000347876/microsoft-2011-secure-boot-certificate-expiration
-Dell (Servers) https://www.dell.com/support/kbdoc/en-us/000362511/microsoft-secure-boot-2011-certificate-expiration-impact-on-dell-poweredge-servers
-Lenovo (Clients) https://support.lenovo.com/us/en/solutions/HT518129
-Lenovo (Servers)  coming soon
-Fujitsu (Clients) coming soon
-Fujitsu (Servers) coming soon
+HP (Clients) https://support.hp.com/ie-en/document/ish_13070353-13070429-16  
+HP Enterprise (Servers)  coming soon  
+Dell (Clients) https://www.dell.com/support/kbdoc/en-us/000347876/microsoft-2011-secure-boot-certificate-expiration  
+Dell (Servers) https://www.dell.com/support/kbdoc/en-us/000362511/microsoft-secure-boot-2011-certificate-expiration-impact-on-dell-poweredge-servers  
+Lenovo (Clients) https://support.lenovo.com/us/en/solutions/HT518129  
+Lenovo (Servers)  coming soon  
+Fujitsu (Clients) coming soon  
+Fujitsu (Servers) coming soon  
 
-Microsoft (Clients) https://support.microsoft.com/en-us/surface/surface-secure-boot-certificates-532abf3b-bafe-420f-b615-bf174105549e
+Microsoft (Clients) https://support.microsoft.com/en-us/surface/surface-secure-boot-certificates-532abf3b-bafe-420f-b615-bf174105549e  
 
 ## Please be aware this is a best effort solution and there is NO WARRANTY and WE ARE NOT LIABLE FOR ANY ISSUES OR DAMAGES you will have.
 
