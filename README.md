@@ -14,13 +14,16 @@ This is a complex certificate dependency thing which involves close OEM vendor s
 
 HP for example does not provide BIOS update support for devices sold before 2018 (in terms of clients, servers are supported longer!). Which is quite fair. They cover devices from 2018 which is in June 2026 already 8.5 years.
 
-### What you need in place is:
+### What you currently need in place:
+1. Run the script on your local test devices as local admin (this is required as the script gathers data from TPM chip).
+
+The current check script is working to gather data only locally but not yet optimized to run as an Intune remediation script nor does it support central logging.
+
+### What you need in the future (Version 2.0):
 1. A corporate Azure Subscription (for Azure Log Analytics to track status and progress)
 2. Intune (to run detection and remediation scripts, to provide BIOS updates via Windows Update for Business)
 
 This solution is currently in development (ALPHA).
-
-The check script is working already but not yet optimized to run as an Intune remediation script yet.
 
 ### The final solution process is planned:
 
