@@ -1,0 +1,39 @@
+﻿Platform,Minimum BIOS Version
+"Microsoft Surface Laptop, 7th Edition",any
+"Microsoft Surface Pro, 11th Edition",any
+Surface 3,MBRBios
+Surface Book,not-supported
+Surface Book 2,not-supported
+Surface Book 3,17.200.140.0
+Surface Go,not-supported
+Surface Go 2,not-supported
+Surface Go 3,11.200.143.0
+Surface Go 4,8.200.143.0
+Surface Hub 2S,not-supported
+Surface Laptop,not-supported
+Surface Laptop 2,not-supported
+Surface Laptop 3,not-supported
+Surface Laptop 4,unknown
+Surface Laptop 5,9.200.143.0
+Surface Laptop 6 for Business,any
+Surface Laptop for Business 7th Edition with Intel,any
+Surface Laptop Go,not-supported
+Surface Laptop Go 2,26.102.143.0
+Surface Laptop Go 3,10.200.143.0
+Surface Laptop SE,7.9.139.0
+Surface Laptop Studio,23.200.143.0
+Surface Laptop Studio 2,16.200.143.0
+Surface Pro,MBRBios
+Surface Pro 10 for Business,any
+Surface Pro 12in 1st Ed with Snapdragon,any
+Surface Pro 2,MBRBios
+Surface Pro 3,MBRBios
+Surface Pro 4,not-supported
+Surface Pro 6,not-supported
+Surface Pro 7,17.200.140.0
+Surface Pro 7+,23.200.143.0
+Surface Pro 8,23.200.143.0
+Surface Pro 9,12.200.143.0
+Surface Pro 9 with 5G,18.7.235.0
+Surface Pro X WiFi,10.703.140.0
+Surface Studio 2+,20.101.143.0
