@@ -654,6 +654,27 @@ If ($Global:scriptProcess -eq "notRequired") {
 if ($prerequisiteCheckSuccessful -eq 0) {
     Write-Host "Pre-Requisite check is required (Bios, SecureBoot, Bitlocker are already ok). Continue ..."
 
+    Write-Host " "
+    Write-Host "Checking Secure Boot Status ..." -ForegroundColor Cyan
+
+    If (Confirm-SecureBootUEFI) {
+        Write-Host "SUCCESS: Secure Boot is enabled on this system" -ForegroundColor Green
+        $secureBootEnabled = $true
+    }
+    else {
+        $debugSecureBootWarning = "WARNING: Secure Boot is disabled on this system"
+        Write-Warning $debugSecureBootWarning
+        Send-LogDebugMessage -Table Error-Debug -Message $debugSecureBootWarning
+        $secureBootEnabled = $false
+        Exit 0
+    }
+
+    Write-Host " "
+    Write-Host "Checking Bitlocker state and recovery key backup"
+    Get-BitlockerInfo
+    Get-BitlockerRecoveryKeyInfo
+    Get-BitlockerEntraIDBackup
+
     # Extract device information like Bios version to compare with supported versions! (collecting data for $deviceInfo object)
     Get-DeviceInformation
     Write-Host "Check for required Bios comparison file"
@@ -700,7 +721,7 @@ if ($prerequisiteCheckSuccessful -eq 0) {
     [Version]$deviceBiosVersion = [regex]::Match($Global:deviceInfo.BIOSVersion, '\d+(\.\d+)*').Value
     [version]$minimumRequiredBios = [regex]::Match(($referenceBiosTable | Where-Object { $_.Platform -eq $Global:deviceInfo.Model }).MinimumBIOSVersion, '\d+(\.\d+)*').Value
     If ([version]$deviceBiosVersion -ge [version]$minimumRequiredBios) {
-        Write-Host "SUCCESS: BIOS version meets minimum requirement" -ForegroundColor Green
+        Write-Host "SUCCESS: BIOS version $([version]$deviceBiosVersion) meets minimum requirement $([version]$minimumRequiredBios)" -ForegroundColor Green
         $Global:enableSBUpdate = $true
     }
     else {
@@ -709,24 +730,6 @@ if ($prerequisiteCheckSuccessful -eq 0) {
         $Global:enableSBUpdate = $false
         Send-LogDebugMessage -Table BiosUpdateRequired -Message $debugBiosUpdateRequired
     }
-
-    Write-Host " "
-    Write-Host "Checking Secure Boot Status ..." -ForegroundColor Cyan
-
-    If (Confirm-SecureBootUEFI) {
-        Write-Host "SUCCESS: Secure Boot is enabled on this system" -ForegroundColor Green
-        $secureBootEnabled = $true
-    }
-    else {
-        Write-Warning "Secure Boot is disabled on this system"
-        $secureBootEnabled = $false
-    }
-
-    Write-Host " "
-    Write-Host "Checking Bitlocker state and recovery key backup"
-    Get-BitlockerInfo
-    Get-BitlockerRecoveryKeyInfo
-    Get-BitlockerEntraIDBackup
 
     if ($Global:enableSBUpdate -eq $true) {
         # We are good to go and are able to enable now the update trigger (Microsoft Reg Key) once!
