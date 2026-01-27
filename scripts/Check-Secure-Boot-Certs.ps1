@@ -32,8 +32,8 @@ $developmentMode = $true    # will allow admins to use different Models CSV file
 
 ###############################################################################################################
 # Variable for logging NEED TO BE FILLED FOR EVERY COMPANY WITH THEIR OWN VALUES! KEEP THEM SECRET!!!
-$Global:azureLogAnalyticsWorkspaceID = "39090783-b5d3-4565-9e33-d8250294b2b7" # Set Azure Log Analytics Workspace ID (unique for every company)
-$Global:azureLogAnalyticsWorkspaceKey = "wJut4+GFKYDdg3kNBCjcvu5U1JgheXPs5dt2ZwWFhY2Kzdr5hP8goiYb0bLmuY+EAK+lhADb++KGvSSsPi/0ww==" # Set Azure Log Analytics Workspace Key (unique for every company)
+$Global:azureLogAnalyticsWorkspaceID = "11111111-2222-3333-4444-55555555555" # Set Azure Log Analytics Workspace ID (unique for every company)
+$Global:azureLogAnalyticsWorkspaceKey = "wJxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=="# Set Azure Log Analytics Workspace Key (unique for every company)
 # First logging and check if we need to run again (for cost savings in Azure Log Analytics the count of executions is throttled)
 $scriptLastRunInterval = 6  # every x days the script get re-executed and generate upload data. 
 #This lowers the cost of Azure Log Analytics as long as you do not want to see daily data.
